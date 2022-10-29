@@ -1,0 +1,61 @@
+{
+  "name": "Dictionaries!",
+  "description": "Escriba 'nw' mas el termino busqueda para la sugerencia de busqueda en varios diccionarios de la web",
+  "version": "1.0",
+  "manifest_version": 3,
+  "background": {
+    "service_worker": "background.js"
+  },
+  "omnibox": { "keyword": "nw" },
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "options.html",
+        "*.js",
+        "*.json",
+        "*.html",
+        "fonts/*",
+        "assets/*"
+      ],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "action": {
+    "default_icon": {
+      "16": "assets/books-16.png",
+      "24": "assets/books-24.png",
+      "32": "assets/books-32.png"
+    },
+    "default_title": "Dictionaries"
+  },
+  "icons": {
+    "16": "assets/books-16.png",
+    "32": "assets/books-32.png",
+    "48": "assets/books-48.png",
+    "128": "assets/books-128.png"
+  },
+  "host_permissions": ["<all_urls>"],
+  "permissions": [
+    "storage",
+    "declarativeContent",
+    "activeTab",
+    "scripting",
+    "tabs",
+    "webNavigation",
+    "system.display"
+  ],
+  "commands": {
+    "openPopup": {
+      "suggested_key": "Ctrl+Shift+Y",
+      "description": "Open Dictionary"
+    },
+    "nextDict": {
+      "suggested_key": "Ctrl+Right",
+      "description": "Next dictionary"
+    },
+    "previousDict": {
+      "suggested_key": "Ctrl+Left",
+      "description": "Previous dictionary"
+    }
+  }
+}
